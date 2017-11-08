@@ -9,6 +9,7 @@ class Post(models.Model):
 
     post_title = models.CharField(max_length = 100)
     post_content = models.TextField()
+    post_date = models.DateTimeField(auto_now_add=True)
 
 
 class Comment(models.Model):
@@ -19,6 +20,8 @@ class Comment(models.Model):
 
     comment_content = models.TextField(max_length=250)
     comment_post = models.ForeignKey(Post)
+    comment_date = models.DateTimeField(auto_now_add=True)
+
 
 
 class User(models.Model):
